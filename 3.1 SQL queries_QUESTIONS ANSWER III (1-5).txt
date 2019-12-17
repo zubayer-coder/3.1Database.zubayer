@@ -1,0 +1,60 @@
+# Answer to the Question (III-1)
+
+ SELECT * FROM customer
+	JOIN orders ON
+		customer.customer_id=order.customer_id
+	JOIN item ON
+		customer.customer_id=item.item_id
+	JOIN item_types ON
+		customer.customer_id=item_types.item_types_id
+ 	WHERE order_date >= '2018-08-05' AND order_date <= '2018-08-15';
+
+
+
+
+# Answer to the Question (III-2)
+
+SELECT * FROM customer 
+	JOIN orders ON
+		customer.customer_id=order.customer_id
+	JOIN item ON
+		customer.customer_id=item.item_id
+	JOIN item_category ON
+		customer.customer_id=item_types.item_types_id
+	JOIN manager ON
+		customer.customer_id=manager.manager_id;
+
+
+
+# Answer to the Question  (III-3)
+
+SELECT * FROM customer
+	JOIN order ON
+		customer.customer_id=order.customer_id
+	JOIN item_details ON
+		customer.customer_id=item.item_id
+	JOIN item_types ON
+		customer.customer_id=item_types.item_types_id
+ 	WHERE order_date >= '2018-08-05' AND order_date <= '2018-08-15';
+
+
+
+
+# Answer to the Question (III-4)
+
+SELECT * FROM employee
+	JOIN delivery ON
+		employee.employee_id=delivery.employee_id
+	JOIN order_details ON
+		employee.employee_id=order_details.order_details_id
+	JOIN orders ON
+		employee.employee_id=order.order_id;
+ 	
+
+# Answer to the Question (III-5)
+
+ SELECT COUNT(item_types_id) as total_item FROM item_types;
+
+ SELECT * FROM item
+	JOIN item_types ON
+		item.item_id=item_types.item_id;
